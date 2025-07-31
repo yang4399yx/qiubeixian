@@ -1,0 +1,152 @@
+/* 主体盒子定义 */
+.shell {
+	width: 100%;
+	position: relative;   /* 设置元素的定位方式为相对定位 */
+	padding: 80px 0; /*顶部和底部添加80像素的内边距，左右则没有 */
+	transition: 0.3s ease 0s; /* 设置0.3s的动画 */
+	background-attachment: fixed; /* 设置背景图片不随页面滚动而移动 */
+	background-size: cover; /*让图片适应盒子大小 */
+	font-family: "楷体";
+}
+.shell:before {
+	position: absolute; /*相对shell绝对定位 */
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(99, 99, 99, 0.8); /* 设置背景半透明度 */
+	content: "";
+}
+/* 标题盒子 */
+.header {
+	width: 80%;
+	text-align: center;
+	margin-bottom: 80px;
+	position: relative;
+	margin-left: 10%;
+}
+.header a{
+	float: right;
+}
+/* 标题样式 */
+.title {
+	color: #fff;
+	font-size: 46px;
+	font-weight: normal;
+	margin: 0;
+}
+/* 时间轴盒子样式 */
+.timeline {
+	display: flex;
+	margin: 0 auto;
+	flex-wrap: wrap;
+	flex-direction: column;
+	max-width: 700px;
+	position: relative;
+}
+/* 小盒子中标题 */
+.content-title {
+	font-weight: normal;
+	font-size: 30px;
+	margin: -10px 0 0 0;
+	transition: 0.4s;
+	padding: 0 10px;
+	box-sizing: border-box;
+	color: #fff;
+}
+/* 小盒子中文本样式 */
+.content-desc {
+	margin: 0;
+	font-size: 15px;
+	box-sizing: border-box;
+	color: rgba(255, 255, 255, 0.7);
+	line-height: 25px;
+}
+.timeline:before {
+	position: absolute;
+	left: 50%;
+	width: 2px;
+	height: 100%;
+	margin-left: -1px;
+	content: "";
+	background: rgba(255, 255, 255, 0.07);
+}
+/* 小盒子样式开始 */
+.item {
+	padding: 40px 0;
+	opacity: 0.3; /*元素的不透明度为30% */
+	filter: blur(2px); /*对元素应用2像素的模糊效果 */
+	transition: 0.5s; /*0.5秒内平滑过渡 */
+	box-sizing: border-box; /*边框盒模型 */
+	width: calc(50% - 40px); /*元素的宽度为父元素宽度的50%减去40像素 */
+	display: flex; /*弹性盒模型 */
+	position: relative;
+	transform: translateY(-80px); /*将元素沿Y轴向上移动80像素 */
+}
+.item:before {
+	content: attr(data-text);
+	letter-spacing: 3px; /* 字符间距为3像素 */
+	width: 100%;
+	position: absolute;
+	color: rgba(255, 255, 255, 0.5); /* 文字颜色为半透明的白色 */
+	font-size: 13px;
+	/* 在伪元素的左侧添加一条2像素宽、半透明的白色边框 */
+	border-left: 2px solid rgba(255, 255, 255, 0.5);
+	top: 70%;
+	margin-top: -5px;
+	padding-left: 15px;
+	opacity: 0;
+	right: calc(-100% - 56px);
+	font: 900 20px ''; /* 字体粗细为900,字体大小为20像素，字体族名被留空 */
+	letter-spacing: 5px; /* 字符间距为5像素，覆盖之前*/
+}
+.item:nth-child(even) {
+	/* 对于偶数子元素，将其在弹性盒容器中的对齐方式设置为底部对齐。 */
+	align-self: flex-end;
+}
+
+.item:nth-child(even):before {
+	right: auto;
+	text-align: right;
+	left: calc(-100% - 56px); /* 将伪元素的左侧定位在父元素左侧之外的位置 */
+	padding-left: 0; /* 移除伪元素左侧的内边距 */
+	border-left: none; /* 移除伪元素左侧的边框 */
+	border-right: 2px solid rgba(255, 255, 255, 0.5);
+	padding-right: 15px;
+}
+.item--active {
+	opacity: 1; /* 不透明度为100% */
+	transform: translateY(0); /* 将元素沿Y轴移动到其原始位置 */
+	filter: blur(0px); /* 移除元素的模糊效果 */
+}
+.item--active:before {
+	top: 50%;
+	transition: 0.3s all 0.2s; 
+	/* 0.3秒内平滑过渡，且延迟0.2秒开始 */
+	opacity: 1;
+}
+.item--active .content-title {
+	margin: -50px 0 20px 0;
+}
+/* 小盒子样式结束*/
+/* 图片样式 */
+.img {
+	max-width: 100%;
+	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+}
+/* 页脚样式 */
+.footer {
+	padding: 95px 0;
+	text-align: center;
+}
+.footer a {
+	color: #999;
+	display: inline-block;
+}
+.footer {
+	width: 100%;
+	text-align: center;
+	margin-bottom: 80px;
+	position: relative;
+	color: #fff;
+}

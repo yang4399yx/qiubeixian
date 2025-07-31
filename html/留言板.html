@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>丘北</title>
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/留言板_style.css" />
+	</head>
+	<body>
+		<!-- 	左侧标题栏开始 -->
+		<div class="lbox" style="font-family: '楷体';">留言板</div>
+		<!-- 	左侧标题栏结束 -->
+		<!-- 导航栏开始 -->
+		<div class="box" align="center">
+			<ul class="nav">
+				<li class="itme">
+					<a href="./首页.html">主页</a>
+				</li>
+				<li class="itme">
+					<a href="./旅游景点.html">旅游景点</a>
+				</li>
+				<li class="itme">
+					<a href="./行政划分.html">行政划分</a>
+				</li>
+				<li class="itme">
+					<a href="./地理环境.html">地理环境</a>
+				</li>
+				<li class="itme">
+					<a href="./社会事业.html">社会事业</a>
+				</li>
+				<li class="itme">
+					<a href="#">资源</a>
+					<ul class="list">
+						<li class="itmeTWO"><a href="./资源/自然资源.html">自然资源</a></li>
+						<li class="itmeTWO"><a href="./资源/社会资源.html">社会资源</a></li>
+					</ul>
+				</li>
+				<li class="itme">
+					<a href="./留言板.html">给我们留言</a>
+				</li>
+			</ul>
+		</div>
+		<!-- 导航栏结束 -->
+		<!-- 主体开始 -->
+		<div class="BBS_card">
+			<div class="messages">
+				<h1>春风十里，</h1>
+				<h1>不如你的笑语。</h1>
+				<h1>愿我的邀请，</h1>
+				<h1>能添一抹亮色到你的日常。</h1>
+				<div class="form">
+					<input type="text" id="username" placeholder="用户名" />
+					<textarea id="message" placeholder="留言内容"></textarea>
+					<button id="submitBtn">留言</button>
+				</div>
+				<div id="messageBoard">
+					<div class="message">
+						<div class="message-info">
+							<div class="info">
+								<img src="../img/地理环境/植被1.jpg" width="50px" height="50px" />
+								<strong>丘北</strong>
+							</div>
+							<span>发布于：2023/11/07 08:00:00</span>
+						</div>
+						<div class="content">美丽丘北，美丽普者黑！！！</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 按钮事件开始 -->
+		<script>
+			// 提交按钮添加点击事件监听器
+			document.getElementById('submitBtn').addEventListener('click', function() {
+			    // 获取用户名和留言板内容
+			    var username = document.getElementById('username').value;
+			    var message = document.getElementById('message').value;
+			
+			    // 如果留言为空，弹出提示并返回
+			    if (message === '') {
+			        alert('请输入内容');
+			        return;
+			    }
+			
+			    // 如果用户名为空，则设置为匿名
+			    if (username === '') {
+			        username = '匿名';
+			    }
+			
+			    // 获取留言板元素和当前时间
+			    var messageBoard = document.getElementById('messageBoard');
+			    var newMessage = document.createElement('div');
+			    newMessage.classList.add('message');
+			    // 注意：这里假设留言内容不需要HTML格式，使用textContent更安全
+			    newMessage.innerHTML = '<div class="message-info"><div class="info"><img src="../img/地理环境/植被1.jpg"><strong>' + username + '</strong></div><span>发布于：' + getCurrentTime() + '</span></div><div class="content">' + message.replace(/</g, "&lt;").replace(/>/g, "&gt;") + '</div>'; // 对message进行简单的XSS防护
+			
+			    // 在留言板的第一个子元素前插入新留言
+			    messageBoard.insertBefore(newMessage, messageBoard.firstChild);
+			
+			    // 清空用户名与输入框
+			    document.getElementById('username').value = '';
+			    document.getElementById('message').value = '';
+			});
+			
+			// 获取当前时间
+			function getCurrentTime() {
+			    var now = new Date();
+			    var year = now.getFullYear(); // 修正错误
+			    var month = ('0' + (now.getMonth() + 1)).slice(-2);
+			    var day = ('0' + now.getDate()).slice(-2);
+			    var hours = ('0' + now.getHours()).slice(-2);
+			    var minutes = ('0' + now.getMinutes()).slice(-2);
+			    var seconds = ('0' + now.getSeconds()).slice(-2);
+			    return year + '/' + month + '/' + day + ' ' + hours + ':' + minutes + ':' + seconds;
+			}
+
+		</script>
+		<!-- 按钮事件结束 -->
+		<!-- 主体结束 -->
+		<!-- footer开始 -->
+		<footer class="page-footer">
+			&copy;小阳版权所有
+			<h2>联系我</h2>
+			<p>联系电话:15025264629</p>
+			<p>邮箱：2382164305@qq.com</p>
+			<p>地址：云南省文山州丘北县</p>
+		</footer>
+		<!--footer结束-->
+	</body>
+</html>

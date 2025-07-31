@@ -1,0 +1,331 @@
+$(function(){
+  var clientShareData = {
+    kShareTitle: document.title,
+    kShareInfo:"",
+    kShareImageString: "https://apicnrapp.cnr.cn/img/logo.jpg",
+    kShareUrl:window.location.href,
+    kShareNewsId:"",
+    currUrl:window.location.href
+  };
+  try {
+      window.webkit.messageHandlers.getShareParam.postMessage(JSON.stringify(clientShareData));
+  } catch(err) {}
+  try {
+      window.android.getShareParam(JSON.stringify(clientShareData));
+  } catch(err) {}
+  // 鐑
+  var settings = {
+    "url": "//apppc.cnr.cn/rebang",
+    "method": "POST",
+    "timeout": 0,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "dataType": 'JSON',
+    "data": JSON.stringify({}),
+  };
+  
+  $.ajax(settings).done(function (response) {
+    if (response && response.status == 200) {
+      if (response.message.toUpperCase() == "SUCCESS") {
+        var hotTop = response.datas.slice(0, 5)
+        var leng = hotTop.length
+        var str = ''
+        for(var i =0; i< leng; i++) {
+          str+='<li>'+
+                  '<div class="tit">' +
+                    '<a href="'+ hotTop[i].docpubUrl +'" target="_blank">'+ hotTop[i].title +'</a>'+
+                  '</div>'+
+                  '<div class="pubtime">'+
+                    '<span>'+ hotTop[i].docpubTime +'</span>'+
+                  '</div>'+
+                '</li>';
+        }
+        $('#hot-top').html(str)
+      } else {
+          console.log(response.message)
+      }
+    }
+  });
+
+  // 鐪艰
+  var yanjian = {
+    url: "//apppc.cnr.cn/cnr45609411d2c5a16/873ec505e17cbea5a6ca0ddc1b6ce5c8/f76a0411ae1ff31be9f9e28f0b51348b",
+    method: "POST",
+    timeout: 0,
+    dataType: "json",
+    headers: {
+      accessToken: "",
+      "Content-Type": "application/json"
+    },
+    data: JSON.stringify({
+      pageIndex: 1,
+      perPage: 30,
+      newsType: "9",
+      chanTagId: "177",
+      lastNewsId: 0
+    })
+  }
+
+  var start = 0
+  var $yanjian = $('#yanjian-list')
+  var yanjianList;
+  $.ajax(yanjian).done(function (response) {
+    if (response && response.code == 200) {
+      if (response.message == "SUCCESS") {
+          yanjianList = response.data.videoList[0].detail
+          renderyanjian(start)
+      } else {
+          console.log(response.message)
+      }
+    }
+  });
+
+  function renderyanjian(start){
+    var currentItems = yanjianList.slice(start, start+2)
+    var len = currentItems.length
+    var str = ''
+    for(var i =0; i < len; i++) {
+      str+='<div class="item">'+
+              '<a target="_blank" href="//www.cnr.cn/yanjian/yanjian3.html?id='+ currentItems[i].id +'&type=2&title='+ encodeURI(currentItems[i].name) +'">'+
+                '<img src="'+ currentItems[i].other_info8 +'" alt="">'+
+                '<span>'+ currentItems[i].name +'</span>'+
+              '</a>'+
+            '</div>';
+    }
+
+    $yanjian.html(str)
+  }
+
+  $('.huanyihuan').on('click', function(){
+    if(start == (yanjianList.length -2)) {
+      start = 0
+    } else {
+      start+=2
+    }
+    renderyanjian(start)
+    return false
+  })
+
+
+  
+  
+
+  var md = new MobileDetect(window.navigator.userAgent);
+
+
+  if (md.mobile()) {
+    // 绉诲姩绔�
+    //console.log('绉诲姩绔�')
+    var isMiniProgram = window.navigator.userAgent.toLocaleLowerCase().indexOf('miniprogram') > -1;
+    if (!isMiniProgram) {$.wakeUpApp()}
+  } else {
+    // pc绔�
+    //console.log('PC绔�')
+    voiceComponent()
+    // 闃呰鏇村锛屾敞鎰忛『搴忥紝瑕佸湪voice缁勪欢涔嬪悗
+    //$.readmore({
+    //  height: 1028,
+    //  dom: '#perny-main',
+    //  callback: function(){
+    //    gotopComponent()
+    //  }
+    //})
+	gotopComponent()
+    fontComponent()
+    rewardComponent()
+
+    //浜岀淮鐮佸垎浜�
+    $(document).on('click', function (evt) {
+      $('.btn_towcode').empty();
+    });
+  }
+  
+
+
+})
+
+
+
+
+function voiceComponent(){
+   // 闊抽鎾斁
+   var voice = $.voice({
+    changeChannel: function (payload) {
+      if (payload.isLive) {
+        // 鐩存挱
+        console.log(payload.currentIndex)
+      } else {
+        // 涓嶆槸鐩存挱
+        var $currentSound = $soundList.eq(payload.currentIndex)
+        if ($currentSound.hasClass('current')) {
+          $currentSound.removeClass('current')
+        } else {
+          $soundList.removeClass('current')
+          $soundList.eq(payload.currentIndex).addClass('current')
+        }
+      }
+    }
+  })
+  
+  var $soundList = $('.sound')
+  var dataArray = $.map($soundList, function (ele, index) {
+    var $a = $(ele).prev('a')
+    var obj = {}
+
+    if ($a.attr('data-audioUrl')) {
+      // 鍙ｆ挱
+      obj.title = $a.text()
+      obj.url = $a.attr('data-audioUrl').replace('.m3u8', '.mp3')
+
+      return obj
+    }
+    obj.title = $a.text() || '鏆傛棤鏍囬'
+    obj.url = $a.attr('href') ? pareseUrl($a.attr('href')) :
+      '//www.cnr.cn/sources/20210420_CNRRevision/demo1.mp3'
+    return obj
+  })
+
+  $soundList.on('click', function () {
+    var $this = $(this)
+    var index = $soundList.index($this)
+    if ($this.hasClass('current')) {
+      $this.removeClass('current')
+    } else {
+      $soundList.removeClass('current')
+      $this.addClass('current')
+    }
+
+    var after = dataArray.slice(0, index)
+    var before = dataArray.slice(index)
+    var newDataArray = before.concat(after)
+
+    voice.load({
+      currentIndex: index,
+      urls: newDataArray,
+      isLive: false
+    });
+  })
+}
+
+
+
+function pareseUrl(url) {
+  var audioUrl = ''
+  var regExp = /\/t(\d+)_(\d+)\.s?html/;
+  if (regExp.test(url)) {
+    audioUrl = '//audioweb.cnr.cn/' + RegExp.$1 + '/' + RegExp.$2 + '/1.mp3'
+  }
+  return audioUrl
+}
+
+
+function fontComponent(){
+  // 瀛椾綋鏀惧ぇ缂╁皬
+  var fontSizeDefault = parseInt($('.article-content').css('fontSize'));
+  var fontSizeStep = 2;
+  var fontMax = 24;
+  var fontMin = 16;
+  $('.add').on('click', function(){
+    if (fontSizeDefault < fontMax) {
+      fontSizeDefault+=fontSizeStep
+      $('.article-content').css({'fontSize': fontSizeDefault})
+      $('.minus').css({opacity: 1})
+    }
+    if (fontSizeDefault >= fontMax) {
+      $(this).css({opacity: 0.5})
+    } else {
+      $(this).css({opacity: 1})
+    }
+  })
+  $('.minus').on('click', function(){
+    if (fontSizeDefault > fontMin) {
+      fontSizeDefault-=fontSizeStep
+      $('.article-content').css({'fontSize': fontSizeDefault})
+      $('.add').css({opacity: 1})
+    }
+    if (fontSizeDefault <= fontMin) {
+      $(this).css({opacity: 0.5})
+    } else {
+      $(this).css({opacity: 1})
+    }
+  })
+}
+
+
+function gotopComponent(){
+  var toplineHeight = $('#topline20210826').height()
+  var $articlefunc = $('#article-func');
+  var $articlebody =  $('.article-body');
+  var maxHeight = $articlebody.offset().top + $articlebody.height() - $articlefunc.outerHeight() - $('.voice').outerHeight()
+  var $goback = $('#goTop')
+  var minHeight = $articlefunc.offset().top - toplineHeight;
+  
+  $goback.on('click',function () {
+    $('body,html').animate({
+        scrollTop: 0
+    },
+    500);
+  })
+  $(window).on('scroll', initPosition);
+  $(window).on('resize', initPosition)
+  function initPosition(){
+    var top = $(window).scrollTop()
+    
+    if (top > minHeight && top <= maxHeight) {
+      $articlefunc.css({
+        'position': 'fixed',
+        'top': toplineHeight,
+        'left': $articlebody.offset().left
+      })
+    }
+    else if(top > maxHeight) {
+      $articlefunc.css({
+        'position': 'absolute',
+        'top': 'auto',
+        'left': 0,
+        'bottom': 0
+      })
+    }
+    else {
+      $articlefunc.removeAttr('style')
+    }
+  }
+}
+
+
+function rewardComponent(){
+  // 鐐硅禐
+  var upNum = $('<i class="before">+1</i>')
+  var upText = $('<i class="after">\u611f\u8c22\u60a8\u53d1\u8868\u6001\u5ea6</i>')
+
+  var add = function(){
+    $(this).prepend(upNum)
+    $(this).append(upText)
+
+    var settings = {
+      "url": "//getway.cnr.cn/cnr45609411d2c5a16/d53191291629f1c1e58a6d823e39d51d/f76a0411ae1ff31be9f9e28f0b51348b",
+      "method": "POST",
+      "timeout": 0,
+      "headers": {
+        "appName": "cnrpc",
+        "tenantId": "cnr",
+        "Content-Type": "application/json"
+      },
+      "data": JSON.stringify({
+        "newsId": document.querySelector('meta[name="contentid"]').getAttribute('content'),
+        "title": document.title,
+        "url": document.location.origin + document.location.pathname
+      }),
+    };
+    
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+
+      upNum.animate({opacity: 1,top: 0}, 800).animate({opacity: 0,top: "50%"}, 0)
+      upText.animate({opacity: 1}, 200).delay(2000).animate({opacity: 0}, 200)
+    });
+  }
+
+  $('.up').one('click', add)
+}

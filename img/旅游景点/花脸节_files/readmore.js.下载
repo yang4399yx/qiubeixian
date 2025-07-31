@@ -1,0 +1,82 @@
+;
+(function ($, win, doc) {
+    $.extend({
+        readmore: function (options) {
+
+            var articleHeight = options.height || 900
+            var articleDom = options.dom || 'body'
+            var bottom
+            $(articleDom).css({
+              'height': articleHeight
+            })
+
+            if ($('#footer0820').outerHeight()) {
+              bottom = $('#footer0820').outerHeight()
+            }
+            if ($('.voice').outerHeight()) {
+              bottom +=$('.voice').outerHeight()
+            }
+            
+            
+            var html = '<div id="readmore">'+
+                          '<div class="mask">'+
+                            '<div class="center">'+
+                              '<div class="w870">'+
+                                '<div class="middle">'+
+                                  '<div class="innter">'+
+                                    '<div class="confirm">'+
+                                      '<div class="cancel"></div>'+
+                                      '<div class="ok"></div>'+
+                                    '</div>'+
+                                  '</div>'+
+                                '</div>'+
+                              '</div>'+
+                            '</div>'+
+                          '</div>'+
+                          '<div class="shade" style="bottom:'+ bottom +'px">'+
+                            '<div class="center">'+
+                              '<div class="w870">'+
+                                '<div class="middle">'+
+                                  '<div class="innter">'+
+                                    '<div class="btn_lookall"></div>'+
+                                  '</div>'+
+                                '</div>'+
+                              '</div>'+
+                            '</div>'+
+                          '</div>'+
+                          
+                        '</div>';
+            var $dom = $(html)
+            $(doc.body).append($dom)
+            
+
+            $dom.on('click', function(event){
+              var classname = $(event.target).prop('class')
+              switch (classname) {
+                case "btn_lookall":
+                  $('.mask', $dom).fadeIn()
+                  break;
+                case "cancel":
+                  $('#perny-main').css({height: "auto"})
+                  $('#readmore').remove()
+                  options.callback ? options.callback() : null
+                  break;
+                case "ok":
+				  if (window._wa && typeof window._wa == 'function') window._wa('wd_paramtracker', {t: "appdl", wdc:"appdl",});
+                  window.open('//news.cnr.cn/special/newsapp/index.html', '_blank')
+                  break;
+                default:
+                  return false
+              }
+            })
+
+            
+
+            return this
+        }
+    });
+
+
+
+
+})(jQuery || window.jQuery, window, document);

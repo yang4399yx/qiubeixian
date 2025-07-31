@@ -1,0 +1,121 @@
+var scripts = document.getElementById('globalheader')
+var haslogo = scripts.getAttribute('data-logo')
+var isApp=false;
+try{window.android.checkInApp('');isApp = true;}catch(err){}
+try{window.webkit.messageHandlers.sendInAppToH5.postMessage('');isApp = true;}catch(err){}
+try{newsDetail.isHarmony();isApp=true}catch(err){}
+if(!isApp){
+document.writeln("<div id=\'topline20210826\'>");
+document.writeln("    <div class=\'line1\'>");
+document.writeln("      <div class=\'row clearfix\'>");
+if(haslogo == "true") {
+  document.writeln("        <div class=\'cnr-logo\'>");
+  document.writeln("          <a  class=\'pc\' href=\'//www.cnr.cn/\' target=\'_blank\'></a>");
+  document.writeln("          <a  class=\'m\' href=\'//m.cnr.cn/\' target=\'_blank\'></a>");
+  document.writeln("        </div>");
+}
+document.writeln("        <ul class=\'nav-main\'>");
+document.writeln("          <li><a href=\'//www.cnr.cn/\' target=\'_blank\'>首页</a></li>");
+document.writeln("          <li><a href=\'//www.cnr.cn/syk/\' target=\'_blank\'>时政</a></li>");
+document.writeln("          <li><a href=\'//news.cnr.cn/\' target=\'_blank\'>新闻</a></li>");
+document.writeln("          <li><a href=\'//www.cnr.cn/erwen/\' target=\'_blank\'>耳闻</a></li>");
+document.writeln("          <li><a href=\'//www.cnr.cn/yanjian/\' target=\'_blank\'>眼见</a></li>");
+document.writeln("          <li><a href=\'//www.cnr.cn/yyzg/\' target=\'_blank\'>云遇中国</a></li>");
+document.writeln("          <li><a href=\'//www.cnr.cn/sddh2/\' target=\'_blank\'>诵读大会</a></li>");
+document.writeln("          <li>");
+document.writeln("            <a href=\'//finance.cnr.cn/\' target=\'_blank\'>财经</a>");
+document.writeln("            <div class=\'sub\'>");
+document.writeln("              <i class=\'top\'></i>");
+document.writeln("              <a href=\'//finance.cnr.cn/zmn/\' target=\'_blank\'>啄木鸟</a>");
+document.writeln("              <a href=\'//ziben.cnr.cn/\' target=\'_blank\'>资本市场</a>");
+document.writeln("              <a href=\'//zj.cnr.cn/zhuanti/cwpd/' target=\'_blank\'>宠物频道</a>");
+document.writeln("            </div>");
+document.writeln("          </li>");
+document.writeln("          <li><a href=\'//www.cnr.cn/fz/\' target=\'_blank\'>法治</a></li>");
+document.writeln("          <li><a href=\'//www.cnr.cn/dj/\' target=\'_blank\'>党建</a></li>");
+document.writeln("          <li><a href=\'//tech.cnr.cn/\' target=\'_blank\'>科技</a></li>");
+document.writeln("          <li><a href=\'//auto.cnr.cn/\' target=\'_blank\'>汽车</a></li>");
+document.writeln("          <li><a href=\'//www.cnr.cn/zhmyh/\' target=\'_blank\'>中华名医号</a></li>");
+document.writeln("          <li><a href=\'//health.cnr.cn/\' target=\'_blank\'>健康中国</a></li>");
+document.writeln("          <li><a href=\'//edu.cnr.cn/\' target=\'_blank\'>教育</a></li>");
+document.writeln("          <li>");
+document.writeln("            <a href=\'//travel.cnr.cn/\' target=\'_blank\'>文旅</a>");
+document.writeln("            <div class=\'sub\'>");
+document.writeln("              <i class=\'top\'></i>");
+document.writeln("              <a href=\'//ent.cnr.cn/canyin/\' target=\'_blank\'>餐饮</a>");
+document.writeln("            </div>");
+document.writeln("          </li>");
+document.writeln("          <li><a href=\'//military.cnr.cn/\' target=\'_blank\'>军事</a></li>");
+document.writeln("          <li><a href=\'//house.cnr.cn/\' target=\'_blank\'>房产</a></li>");
+document.writeln("          <li><a href=\'//food.cnr.cn/\' target=\'_blank\'>食品</a></li>");
+document.writeln("          <li>");
+document.writeln("            <a href=\'//www.cnr.cn/sazg/\' target=\'_blank\'>食安</a>");
+document.writeln("            <div class=\'sub\'>");
+document.writeln("              <i class=\'top\'></i>");
+document.writeln("              <a href=\'//www.cnr.cn/sazg/sazn/' target=\'_blank\'>食安助农</a>");
+document.writeln("            </div>");
+document.writeln("          </li>");
+document.writeln("          <li><a href=\'//gongyi.cnr.cn/\' target=\'_blank\'>公益</a></li>");
+
+
+document.writeln("        </ul>");
+document.writeln("        <ul class=\'nav-side\'>");
+document.writeln("          <li class=\'search\'>");
+document.writeln("            <a class=\'pc\' href=\'//s.cnr.cn/\' target=\'_blank\'>搜索</a>");
+document.writeln("            <a class=\'m\' href=\'//m.cnr.cn/#/subpages/pages/search/search\' target=\'_blank\'></a>");
+document.writeln("          </li>");
+document.writeln("          <li class=\'app\'>");
+document.writeln("            <a class=\'pc\' href=\'//news.cnr.cn/special/newsapp/index.html\' target=\'_blank\'>下载APP</a>");
+document.writeln("            <a class=\'m\' href=\'//news.cnr.cn/special/newsapp/index.html\' target=\'_blank\'></a>");
+document.writeln("          </li>");
+document.writeln("          <li class=\'email\'>");
+document.writeln("            <a href=\'//mail.cnr.cn/webmail/cnrlogin/\' target=\'_blank\'>邮箱</a>");
+document.writeln("          </li>");
+document.writeln("        </ul>");
+document.writeln("      </div>");
+document.writeln("    </div>");
+document.writeln("    <div class=\'line2 clearfix\'>");
+document.writeln("      <div class=\'row\'>");
+document.writeln("        <ul class=\'nav-local\'>");
+document.writeln("          <li><a href=\'//www.cnr.cn/bj/\' target=\'_blank\'>京</a></li>");
+document.writeln("          <li><a href=\'//www.cnr.cn/tj/\' target=\'_blank\'>津</a></li>");
+document.writeln("          <li><a href=\'//www.cnr.cn/hebei/\' target=\'_blank\'>冀</a></li>");
+document.writeln("          <li><a href=\'//www.cnr.cn/sx/\' target=\'_blank\'>晋</a></li>");
+document.writeln("          <li><a href=\'//nm.cnr.cn/\' target=\'_blank\'>蒙</a></li>");
+document.writeln("          <li><a href=\'//www.cnr.cn/ln/\' target=\'_blank\'>辽</a></li>");
+document.writeln("          <li><a href=\'//jl.cnr.cn/\' target=\'_blank\'>吉</a></li>");
+document.writeln("          <li><a href=\'//hlj.cnr.cn/\' target=\'_blank\'>黑</a></li>");
+document.writeln("          <li><a href=\'//www.cnr.cn/shanghai/\' target=\'_blank\'>沪</a></li>");
+document.writeln("          <li><a href=\'//js.cnr.cn/\' target=\'_blank\'>苏</a></li>");
+document.writeln("          <li><a href=\'//zj.cnr.cn/\' target=\'_blank\'>浙</a></li>");
+document.writeln("          <li><a href=\'//www.cnr.cn/ah/\' target=\'_blank\'>皖</a></li>");
+document.writeln("          <li><a href=\'//www.cnr.cn/fj/\' target=\'_blank\'>闽</a></li>");
+document.writeln("          <li><a href=\'//jx.cnr.cn/\' target=\'_blank\'>赣</a></li>");
+document.writeln("          <li><a href=\'//www.cnr.cn/sd/\' target=\'_blank\'>鲁</a></li>");
+document.writeln("          <li><a href=\'//hn.cnr.cn/\' target=\'_blank\'>豫</a></li>");
+document.writeln("          <li><a href=\'//www.cnr.cn/hubei/\' target=\'_blank\'>鄂</a></li>");
+document.writeln("          <li><a href=\'//www.cnr.cn/hunan/\' target=\'_blank\'>湘</a></li>");
+document.writeln("          <li><a href=\'//www.cnr.cn/gd/\' target=\'_blank\'>粤</a></li>");
+document.writeln("          <li><a href=\'//gx.cnr.cn/\' target=\'_blank\'>桂</a></li>");
+document.writeln("          <li><a href=\'//www.cnr.cn/hn/\' target=\'_blank\'>琼</a></li>");
+document.writeln("          <li><a href=\'//cq.cnr.cn/\' target=\'_blank\'>渝</a></li>");
+document.writeln("          <li><a href=\'//sc.cnr.cn/\' target=\'_blank\'>川</a></li>");
+document.writeln("          <li><a href=\'//gz.cnr.cn/\' target=\'_blank\'>黔</a></li>");
+document.writeln("          <li><a href=\'//www.cnr.cn/yn/\' target=\'_blank\'>云</a></li>");
+//document.writeln("          <li><a href=\'//www.cnr.cn/xz/\' target=\'_blank\'>藏</a></li>");
+document.writeln("          <li><a href=\'//www.cnr.cn/sxpd/\' target=\'_blank\'>陕</a></li>");
+document.writeln("          <li><a href=\'//gs.cnr.cn/\' target=\'_blank\'>甘</a></li>");
+document.writeln("          <li><a href=\'//www.cnr.cn/qhfw/\' target=\'_blank\'>青</a></li>");
+document.writeln("          <li><a href=\'//nx.cnr.cn/\' target=\'_blank\'>宁</a></li>");
+document.writeln("          <li><a href=\'//xj.cnr.cn/\' target=\'_blank\'>新</a></li>");
+document.writeln("          <li><a href=\'//dl.cnr.cn/\' target=\'_blank\'>大连</a></li>");
+document.writeln("          <li><a href=\'//zj.cnr.cn/mlnb/\' target=\'_blank\'>宁波</a></li>");
+document.writeln("          <li><a href=\'//xm.cnr.cn/\' target=\'_blank\'>厦门</a></li>");
+document.writeln("          <li><a href=\'//sz.cnr.cn/\' target=\'_blank\'>深圳</a></li>");
+
+document.writeln("        </ul>");
+document.writeln("      </div>");
+document.writeln("    </div>");
+document.writeln("  </div>");
+document.writeln("<div class=\'blank\'></div>");
+}

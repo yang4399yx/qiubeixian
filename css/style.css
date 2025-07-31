@@ -1,0 +1,245 @@
+*{
+				padding: 0;
+				margin: 0;
+				font: inherit;
+				list-style: none;
+			}
+			/*通用样式*/
+			body{
+				font:微软雅黑,黑体,Verdana,Arial,sans-serif;
+				color: #333333;
+				margin: 0;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(#b8f1ed,#f1f1b8);
+				/* background-repeat: no-repeat;   /* 背景颜色不重复 */ 
+			}
+			/* 左边主题盒子*/
+			.lbox{
+				height: 100vh;
+				width: 100px;
+				float: left; /* 盒子左侧浮动 */
+/* 				background-color:#a78560 ; */
+				display: flex; /* 定义弹性容器 */
+				justify-content: center; /*字体 水平居中 */
+				align-items: ; /*字体垂直方向 */
+				padding-top: 100px;
+				font-size: 80px; /* 设置字体大小 */
+				font-weight: bold; /* 字体加粗 */
+				color: #fff; /* 字体颜色 */
+				text-align:; /* 文字居中 */
+				background-image: url(../img/莲花001.png);  /* 背景图片 */
+				background-repeat: no-repeat;  /* 背景图案不重复 */
+			}
+			/*导航栏外层盒子*/
+			.box{
+				width: 100vw; /* 盒子宽 */
+				height: 100px;
+				/* margin: 20 auto; */
+				/* background-color:#a78560 ; */
+			}
+			.nav{
+				width:1400px;
+				height: 100px;
+/* 				background-color: #6bcad0; */
+				display: flex;
+				font-family: "楷体";
+			}
+			.nav a{
+				display: flex;   /* 盒子flex弹性盒子 */
+				justify-content: center; /* 主线 */
+				align-items: center;  /* 交叉轴 */
+				height: 100%;
+				color: #fff;
+				font-size: 30px;
+				margin-top: 0px;
+				
+			}
+			.nav>.itme{
+				width: 100%;
+				height: 100%;
+				position: relative;
+				transition: .4s;
+			}
+			/* 下拉框布局 */
+			.list{
+				position: absolute;
+				top: 100px;    /* 下拉框具顶部距离 */
+				width:200px;  /* 下拉的宽 */
+				overflow: hidden;/* 处理溢出内容 */
+				max-height: 0px;
+				color: #fff;
+				font-size: 20px;
+				transition: .4s;
+				border-radius: 0 0 50px 50px; /* 下拉框弧度 */
+				background-color: #f2debd;
+				align-items: center; /* 垂直居中 */
+			}
+			/* 下拉框大小 */
+			.itmeTWO{
+				height: 60px;  /* 下拉框高 */
+				transition: 0.5s;
+				z-index: 1; /* 确保地图在上层 */
+			}
+			.itmeTWO a{
+				display: flex;   /* 盒子flex弹性盒子 */
+				justify-content: center; /* 主线 */
+				align-items: center;  /* 交叉轴 */
+				height: 100%;
+				color: #fff;
+				font-size: 25px;	  /* 下拉框字体大小 */
+			}
+			/* 鼠标移动到导航栏变色 */
+			.nav>.itme:hover{
+				background-color:#f2debd;
+			}
+			.nav>.itme:hover>.list{
+				max-height: 1000px;
+			}
+			a{
+				text-decoration: none;
+			}
+			/* 鼠标移动到下拉框颜色变淡 */
+			.itmeTWO:hover{
+				background-color: rgba(255,255,255,.3);
+			}
+			/* 主体 */
+			/* 模块一：资料卡 */
+			.center_card{
+				width: 90%; /* 盒子宽 */
+				height:auto;
+				font-family: "楷体";
+				background: linear-gradient(#f1f1b8,#b8f1ed);
+				margin-left:8% ;
+			}
+			.info_card{
+				width: 90%;
+				height: auto;
+				margin-left: 5%;
+				/* background-color: chartreuse;	 */
+			}
+			/* 右视频栏 */
+			.info_card_video{
+				width: 55%;
+				height: 450px;
+				background-color: black;
+				float: right;
+				color: #fff;
+			}
+			/* 视频格式 */
+			video {
+				width: 100%;
+				height:95%;
+				background: linear-gradient(#b8f1ed,#000000);
+			}
+			.info_card h1{
+				font-size: 150px;
+				color: #FFFFFF;
+				/* text-align: center; */
+			}
+			/* 左边文本框 */
+			.info_card_text{
+				width: 45%;
+				height: 450px;
+				float: left;
+				/* background-color: bisque; */
+			}
+			/* 上列表下边框为虚线 */
+			.dashed-border {
+			  border-collapse: collapse; /* 确保边框合并为单一边框 */
+			}
+			
+			.dashed-border tr {
+			  border-bottom: 1px dashed #668B8B; /* 虚线样式，可以更改颜色和线条粗细 */
+			}
+			/* 下文本盒子 */
+			.bl_card_text{
+				padding-top: 40px;
+			}
+			/* p标签 */
+			.info_card_text p{
+				font-size: 18px;
+				text-indent: 2em;
+				color: ;
+			}
+			/* 模块二:基本信息*/
+			/* 点击显示 button样式*/
+			.slidershow_button1{
+				outline:none;
+				border-radius:5px;
+				border: none;width: 
+				100px;height: 28px;
+				border-spacing: 20px;
+				background: linear-gradient(#FFF8DC,#b8f1ed)
+			}
+			.slidershow_button2{
+				outline:none;
+				border-radius:5px;
+				border: none;width: 
+				100px;height: 28px;
+				border-spacing: 20px;
+				background: linear-gradient(#b8f1ed,#FFF8DC)
+			}
+			/* 图片放大效果实现样式 */
+			.modal {
+			  display: none;
+			  position: fixed;
+			  z-index: 1;
+			  padding-top: 100;
+			  left: 0;
+			  top: 0;
+			  width: 100%;
+			  height: 100%;
+			  overflow: auto;
+			  background-color: rgb(0,0,0);
+			  background-color: rgba(0,0,0,0.9);
+			}
+			.modal-content {
+			  margin: auto;
+			  margin-top: 5%;
+			  display: block;
+			  height: 80%; /* 放大后高 */
+			  width: 80%; /* 放大后宽 */
+			}
+			.modal-content:hover {
+			  cursor: zoom-out;  /* 改变鼠标指针的样式为放大镜 */
+			}
+			.close {
+			  position: absolute; /* 绝对定位的元素会脱离文档流 */
+			  top: 15px;
+			  right: 35px;
+			  color: #f1f1f1;
+			  font-size: 80px;
+			  font-weight: bold;
+			  transition: 0.3s;
+			}
+			.close:hover,.close:focus {
+			  color: #bbb;
+			  text-decoration: none;
+			  cursor: pointer;
+			}
+			/* 图片放大效果实现样式结束 */
+			/* 行政划分--css: */
+			.slidershow_button3{
+				outline:none;
+				border-radius:5px;
+				border: none;
+				font-weight: bold;
+				width: 110px;
+				height: 60px;
+				border-spacing: 20px;
+				font-size: 18px;
+				background: linear-gradient(#FFF8DC,#b8f1ed)
+			}
+			/* 页脚 */
+			.page-footer{
+				clear: both;
+				padding: 15px;
+				margin-top: 10px;
+				/* background-color: #fde590; */
+				color: #FFFFFF;
+				text-align: center;
+				font-size: 100%;
+			} 
+			
+			

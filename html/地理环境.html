@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>丘北</title>
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/地理环境_style.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<script src="../js/地理_script.js"></script>
+<!-- 		3.引入百度地图api 最好在head引入 -->
+				<script type="text/javascript"
+			src="https://api.map.baidu.com/api?v=1.0&&type=webgl&ak=nxduzHItreydvo0wgo9S6XpaVgicjp6b">
+		</script>
+	</head>
+	<body>
+		<!-- 	左侧标题栏开始 -->
+		<div class="lbox" style="font-family: '楷体';">丘北地理环境</div>
+		<!-- 	左侧标题栏结束 -->
+		<!-- 导航栏开始 -->
+		<div class="box" align="center">
+			<ul class="nav">
+				<li class="itme">
+					<a href="首页.html">主页</a>
+				</li>
+				<li class="itme">
+					<a href="./旅游景点.html">旅游景点</a>
+				</li>
+				<li class="itme">
+					<a href="./行政划分.html">行政划分</a>
+				</li>
+				<li class="itme">
+					<a href="./地理环境.html">地理环境</a>
+				</li>
+				<li class="itme">
+					<a href="./社会事业.html">社会事业</a>
+				</li>
+				<li class="itme">
+					<a href="#">资源</a>
+					<ul class="list">
+						<li class="itmeTWO"><a href="资源/自然资源.html">自然资源</a></li>
+						<li class="itmeTWO"><a href="资源/社会资源.html">社会资源</a></li>
+					</ul>
+				</li>
+				<li class="itme">
+					<a href="./留言板.html">给我们留言</a>
+				</li>
+			</ul>
+		</div>
+		<!-- 导航栏结束 -->
+		<!-- 主体开始 -->
+		<div class="baidu_map">
+			<h2 style="font-size: 35px;font-family:'楷体';font-weight: bold;">地理环境</h2>
+			<h4 style="font-size: 28px;font-family: '楷体';margin-top: 20px;"><img width="40px" height="35px"
+					src="../img/地理环境/地域.png" alt="" />位置境域</h4>
+			<p style="font-size: 20px;margin-top: 10px;font-family: '楷体';text-indent: 2em;">
+				丘北县，位于云南省东南部，位于东经103°34’～104°45’、北纬23°45’～24°28’之间。
+				东隔清水江与广南县毗邻，南与砚山县、开远市接壤，西隔南盘江同弥勒市、泸西县相望，北与师宗县、广西壮族自治区西林县衔接。总面积5038平方公里。</p>
+			<!-- 百度地图 开始-->
+			<p style="margin-top: 20px;"><img width="90px" height="70px" src="../img/地理环境/地图 (2).png" alt="" /></p>
+			<div class="map"></div>
+			<!-- 百度地图结束-->
+			<!-- 地形开始 -->
+			<h4 style="font-size: 28px;font-family: '楷体';margin-top: 20px;"><img width="40px" height="35px"
+					src="../img/地理环境/iconfont图标_地形数据.png" alt="" />地形</h4>
+			<p style="font-size: 20px;margin-top: 10px;font-family: '楷体';text-indent: 2em;">
+				丘北县地处滇东南岩溶山原丘陵地带，地势西南高，山峦叠翠，形成西南~东北道道屏障，六诏山支系大总山纵横全境，主要山脉为羊雄山脉系,
+				海拔在2000m 以上的分支有37座;西牛大山脉系，海拔在 1800m 以上的分支山脉为7座;布亚大山脉系，海拔在
+				1700m 以上的有 12 座。境内最高海拔为羊雄山顶2501.8m，最低海拔为羊街乡弄位村为782m，相对高差1719.8m。</p>
+			<div style="margin-top: 20px; height: 300px;width: 100%;">
+				<table style="height: 300px;width: 100%;">
+					<tr>
+						<td style=" height: 300px;width: 20%; text-align: center;">
+							<div class="images">
+							<img style="height: 250px;width: 95%;" src="../img/地理环境/岩溶山原丘陵.jpeg"  alt="Image 1" onclick="openModal(this)" />
+							</div>
+							<a style="color: white;font-weight: bold;">岩溶山原丘陵地带</a>
+						</td>
+						<td style=" height: 300px;width: 20%; text-align: center;">
+							<div class="images">
+							<img style="height: 250px;width: 95%;" src="../img/地理环境/羊雄山上.webp"  alt="Image 2" onclick="openModal(this)" />
+							</div>
+							<a style="color: white;font-weight: bold; ">羊雄山上眺望图</a>
+						</td>
+						<td style=" height: 300px;width: 20%; text-align: center;">
+							<div class="images">
+							<img style="height: 250px;width: 95%;" src="../img/地理环境/风车.gif" alt="Image 3" onclick="openModal(this)" />
+							</div>
+							<a style="color: white;font-weight: bold;">舍得草场风车</a>
+						</td>
+						<td style=" height: 300px;width: 20%; text-align: center;">
+							<div class="images">
+							<img style="height: 250px;width: 95%;" src="../img/地理环境/官寨天然溶洞.webp" alt="Image 4" onclick="openModal(this)" />
+							</div>
+							<a style="color: white;font-weight: bold;">官寨天然溶洞</a>
+						</td>
+						<td style=" height: 300px;width: 20%; text-align: center;">
+							<div class="images">
+							<img style="height: 250px;width: 95%;" src="../img/地理环境/仙人洞.jpeg" alt="Image 5" onclick="openModal(this)" />
+							</div>
+							<a style="color: white;font-weight: bold;">普者黑仙人洞</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<!-- 地形结束 -->
+			<!-- 气候开始 -->
+			<h4 style="font-size: 28px;font-family: '楷体';margin-top: 20px;"><img width="40px" height="35px"
+					src="../img/地理环境/天气.png" alt="" />气候</h4>
+			<p style="font-size: 20px;margin-top: 10px;font-family: '楷体';text-indent: 2em;">
+				丘北县地处滇东南岩溶山原丘陵地带，地势西南高，东北低。气候总体上属中亚热带高原季风气候，夏无酷暑，冬无
+				严寒，四季温差小、干湿季分明、垂直差异显著。春温回升迅速、夏季温暖而不炎热、秋季降温剧烈、冬季温和而不寒
+				冷，终年温暖。年平均气温16.7℃，最冷月平均气温 9.2℃，最热月平均气温 21.9℃，历年极端最低气温-7.6℃，历年极
+				端最高气温 34.9℃。年平均降雨量 1157mm，其中 5~10 月降雨量 944.9mm，占全年的82.7%。年平均相对湿度78%
+				无霜期长，年平均无霜期282天，年日照时数1993.1小时，占可照时数的 45%，年平均风速 1.8m/s，最多风向为南风，年
+				平均蒸发量 1685.7mm，年雷暴日数79天。主要气候灾害有干旱、低温、洪涝、冰雹、大风、雷暴等。</p>
+			<!-- 气候结束 -->
+			<!-- 水文开始 -->
+			<h4 style="font-size: 28px;font-family: '楷体';margin-top: 20px;"><img width="40px" height="35px"
+					src="../img/地理环境/水文站.png" alt="" />水文</h4>
+			<p style="font-size: 20px;margin-top: 10px;font-family: '楷体';text-indent: 2em;">
+				丘北县主要河流有南盘江、六郎洞河、夸墨河、拖底河、官寨河、补挡河、清水江、南丘河、清水河、清平河、石葵
+				河、蚂蚁河(马恒地段)，境内水系属珠江流域、西江水系，南盘江为界河，清水江为主干河，境内共有河流十三条，丘
+				北县年径流量21.99亿m³。普者黑湖为较大的天然湖泊，水面10.8km²。</p>
+			<div style="margin-top: 20px; height: 300px;width: 100%;">
+				<table style="height: 300px;width: 100%;">
+					<tr>
+						<td style=" height: 300px;width: 20%; text-align: center;">
+							<div class="images">
+							<img style="height: 250px;width: 95%;" src="../img/地理环境/清水江.webp" alt="Image 6" onclick="openModal(this)" />
+							</div>
+							<a style="color:white;font-weight: bold;">清水江</a>
+						</td>
+						<td style=" height: 300px;width: 20%; text-align: center;">
+							<div class="images">
+							<img style="height: 250px;width: 95%;" src="../img/地理环境/六郎洞.webp" alt="Image 7" onclick="openModal(this)" />
+							</div>
+							<a style="color: white;font-weight: bold;">六郎洞</a>
+						</td>
+						<td style=" height: 300px;width: 20%; text-align: center;">
+							<div class="images">
+							<img style="height: 250px;width: 95%;" src="../img/地理环境/官寨河.webp" alt="Image 8" onclick="openModal(this)" />
+							</div>
+							<a style="color: white;font-weight: bold;">官寨河</a>
+						</td>
+						<td style=" height: 300px;width: 20%; text-align: center;">
+							<div class="images">
+							<img style="height: 250px;width: 95%;" src="../img/地理环境/普者黑湖.jpg" alt="Image 9" onclick="openModal(this)" />
+							</div>
+							<a style="color: white;font-weight: bold;">普者黑湖</a>
+						</td>
+						<td style=" height: 300px;width: 20%; text-align: center;">
+							<div class="images">
+							<img style="height: 250px;width: 95%;" src="../img/地理环境/清平水库.jpg" alt="Image 10" onclick="openModal(this)" />
+							</div>
+							<a style="color: white;font-weight: bold;">清平水库</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<!-- 水文结束 -->
+			<!-- 土壤开始 -->
+			<h4 style="font-size: 28px;font-family: '楷体';margin-top: 20px;"><img width="40px" height="35px"
+					src="../img/地理环境/土壤.png" alt="" />土壤</h4>
+			<p style="font-size: 20px;margin-top: 10px;font-family: '楷体';text-indent: 2em;">
+				据 1982 年土壤普査分类，丘北境内土壤分为5个土类，12 个亚类，14 个土属，55个土种。主要土壤有:红壤、黄
+				红壤、褐红壤、粗骨性红壤、黑色石灰土、红色石灰土、黄棕壤、棕壤等7个土壤亚类。
+				全县土壤垂直分布不明显，海拔 1300m 以下，分布由页岩、砂页岩母质形成的粗骨性红壤;海拔1300m~1800m 多
+				分布黄红壤，成土母质有砂页岩、页岩、石灰岩等;海拔1800m~2200m多分布黄棕壤，成十母质为砂页岩:海拔2200m
+				以上，分布有棕壤，成土母质为石灰质白云岩。红壤类是境内主要土壤，分布于大部分坝区和山区，石灰土类分布于太平
+				雄山、野猪塘、笼桥、腻脚、舍得等海拔 1700m~2200m的山区:黄棕分布于冲头、腻脚、舍得海拔1800m 以上的砂
+				页岩地区:棕填分布于海拔2300m 以上的部分地区。</p>
+			<div style="margin-top: 20px; height: 300px;width: 50%; margin-left: 25%;">
+				<video id="myVideo" src="../mv/丘北红土.mp4" controls autoplay loop muted></video>
+				<p style="font-size: 10px;color: grey;">视频来源：阿庆摄影</p>
+			</div>
+			<!-- 土壤结束 -->
+			<!-- 植被开始 -->
+			<h4 style="font-size: 28px;font-family: '楷体';margin-top: 20px;"><img width="40px" height="35px"
+					src="../img/地理环境/植被面.png" alt="" />植被</h4>
+			<p style="font-size: 20px;margin-top: 10px;font-family: '楷体';text-indent: 2em;">
+				丘北县属于亚热带山地湿润生态类型，林业用地面积 26.42 万 hm²，占全县土地总面积的52.43%;非林业用地面积
+				23.97万hm²，占全县土地总面积的47.57%。在林业用地中，有林地 13.33 万 hm²，疏林地 0.098 万 hm²，灌木林地
+				8.16 万 hm²，未成林造林地, 0.68 万hm²，宜林地3.83万 hm2，其它0.32万hm²。全县森林覆盖率33.38%，林木绿化率
+				42.69%。
+				全县活立木总蓄积量633.25万m³，其中，有林地覆盖率26.44%，国家特别规定的灌木林覆盖率6.94%。县境内林分
+				主要以针叶林为主，树种以乡土树种云南松和栎类为主，杉木、桉树、西南桦等速生树种为辅。</p>
+			<div style="margin-top: 20px; height: 300px;width: 100%;">
+				<table style="height: 300px;width: 100%;">
+					<tr>
+						<td style=" height: 300px;width: 20%; text-align: center;">
+							<div class="images">
+							<img style="height: 250px;width: 80%;" src="../img/地理环境/植被.jpg" alt="Image 11" onclick="openModal(this)" />
+							</div>
+						</td>
+						<td style=" height: 300px;width: 20%; text-align: center;">
+							<div class="images">
+							<img style="height: 250px;width: 80%;" src="../img/地理环境/植被1.jpg" alt="Image 12" onclick="openModal(this)" />
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<!-- 植被结束 -->
+	<!-- 放大图片开始 -->
+	<!-- 放大图片的弹窗 -->
+	<div id="imageModal" class="modal" onclick="closeModal()">
+	    <img id="modalImage" src="" alt="Modal Image">
+	</div>
+	<!-- 放大图片结束 -->
+		<!-- 主体结束 -->
+		<!-- footer开始 -->
+		<footer class="page-footer">
+			&copy;小阳版权所有
+			<h2>联系我</h2>
+			<p>联系电话:15025264629</p>
+			<p>邮箱：2382164305@qq.com</p>
+			<p>地址：云南省文山州丘北县</p>
+		</footer>
+		<!--footer结束-->
+	</body>
+	<!-- 地图js样式开始 -->
+	<script>
+		// <!-- 4.创建地图实例 -->
+
+		// 1)获得节点 
+		let mapSelector = document.querySelector(".map");
+
+		// <!-- 2)借用百度地图api创建一个地图实例；参数是'节点'或者'id值' -->
+		let map = new BMapGL.Map(mapSelector);
+
+		// <!-- 3)借用百度地图api创建一个定位点 丘北县人民政府(104.172942,24.057456) -->
+		let point = new BMapGL.Point(104.172942, 24.057456);
+
+		// <!-- 4)初始化地图；参数1是定位点； 参数2是地图级别； 1-19：1范围最大 细节最弱， 19范围最小 细节最强 -->
+		map.centerAndZoom(point, 12)
+		// 开启鼠标滚轮缩放
+		map.enableScrollWheelZoom(true);
+
+		// map.setHeading(10);   //设置地图旋转角度
+		// map.setTilt(10);       //设置地图的倾斜角度
+
+		var scaleCtrl = new BMapGL.ScaleControl(); // 添加比例尺控件
+		map.addControl(scaleCtrl);
+		var zoomCtrl = new BMapGL.ZoomControl(); // 添加缩放控件
+		map.addControl(zoomCtrl);
+		var cityCtrl = new BMapGL.CityListControl(); // 添加城市列表控件
+		map.addControl(cityCtrl);
+		// map.setMapType(BMAP_EARTH_MAP);      // 设置地图类型为地球模式
+		//显示丘北县镂空
+		var bd = new BMapGL.Boundary();
+		bd.get('丘北县', function(rs) {
+			// console.log('外轮廓：', rs.boundaries[0])
+			// console.log('内镂空：', rs.boundaries[1])
+			var hole = new BMapGL.Polygon(rs.boundaries, {
+				fillColor: '#b8f1ed',
+				fillOpacity: 0.2
+			});
+			map.addOverlay(hole);
+		});
+		// var point = new BMapGL.Point1(104.110869,23.885386);
+		var content = '丘北县';
+		var label = new BMapGL.Label(content, { // 创建文本标注
+			position: point,
+			offset: new BMapGL.Size(10, 20)
+		})
+		map.addOverlay(label); // 将标注添加到地图中 
+		label.setStyle({ // 设置label的样式
+			color: '#000',
+			fontSize: '30px',
+			border: '2px solid #1E90FF'
+		})
+	</script>
+	<!-- 地图js样式结束 -->
+</html>

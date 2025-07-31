@@ -1,0 +1,61 @@
+			/* 地理环境:地图 */
+			.baidu_map{  /* 地图外层盒子 */
+				width: 80%; /* 盒子宽 */
+				height:auto;
+				zont-family: "楷体";
+				background: linear-gradient(#f1f1b8,#b8f1ed);
+				margin-left:10% ;
+			}
+			/* 	存放百度地图的盒子尺寸样式设置 */
+			/*  2.设置尺寸  */
+			.map {
+				width: 100%;
+				/*任意大小*/
+				height: 800px;
+				border: 1px solid #b8f1ed;
+			}
+			/* 多张图片放大 */
+			.images img {
+		        /* border: #fff solid 10px; */
+		        max-width: 50vh;
+		        max-height: 50vh;
+		        transition: .5s;
+		        cursor: pointer; /* 鼠标变为点击样式 */
+		    }
+		
+		    .images:hover img {
+		        box-shadow: 0 10px 30px #86c4f7;
+		        transform: scale(1.05);
+		    }
+		    /* 图片容器样式 */
+		    .images {
+		        display: flex;
+		        align-items: center;
+		        justify-content: center;
+		        min-height: 30vh;
+		        transform-origin: 50% 50%;
+		        transition: 1s;
+		    }
+		
+		    /* 点击后的放大弹窗样式 */
+		    .modal {
+		        display: none;
+		        position: fixed;
+		        top: 0;
+		        left: 0;
+		        width: 100vw;
+		        height: 100vh;
+		        background: rgba(0, 0, 0, 0.8);
+		        justify-content: center;
+		        align-items: center;
+		        z-index: 1000;
+		    }
+		
+		    .modal img {
+		        max-width: 90%;
+		        max-height: 90%;
+		    }
+		
+		    .modal.active {
+		        display: flex;
+		    }

@@ -1,0 +1,242 @@
+/* 选择框样式文档 */
+.one_div {
+	margin-top: 20px;
+	height: 300px;
+	width: 100%;
+}
+
+.one_div table {
+	height: 300px;
+	width: 100%;
+}
+
+.one_div td {
+	height: 300px;
+	width: 300px;
+}
+
+/* 标题盒子样式 */
+.title_div {
+	width: 40%;
+	height: 50px;
+	margin-left: 30%;
+	background: linear-gradient(#FFAEB9, #FFFACD);
+	font-size: 28px;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	display: flex;
+	font-family: "楷体";
+	align-items: center;
+	/* 垂直居中 */
+	justify-content: center;
+	/* 水平居中，如需要 */
+}
+
+.title_div img {
+	width: 40px;
+	height: 40px;
+}
+
+.one_div_div {
+	width: 80%;
+	height: 150px;
+	margin-left: 10%;
+	background: linear-gradient(#FFAEB9, #FFFACD);
+	overflow: auto;
+	/* 显示滚动条 */
+}
+.one_div_div p{
+	font-family: "楷体";
+	text-indent: 2em;
+	font-size: 18px;
+}
+
+/* 定义滚动条 */
+::-webkit-scrollbar {
+	width: 10px;
+	background-color: #FFFACD;
+}
+
+/* 定义滑动轨道 */
+::-webkit-scrollbar-track {
+	background: blavk;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color:	#B5B5B5;
+}
+
+/* 轮播图开始 */
+
+@font-face {
+	font-family: Millik;
+	font-weight: 700;
+	src: url(./asset/font/Millik.c3f91cb.ttf) format("truetype");
+	text-rendering: optimizeLegibility;
+}
+
+:root {
+	--post-spacing: 1.78vw;
+	--post-size: 25vw;
+	--mask-size: 100vw;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	font-family: Millik, Arial, sans-serif;
+	font-size: 62.5%;
+	box-sizing: border-box;
+	/* 如果确实需要字体平滑效果，可以保留以下属性，但通常现代浏览器默认效果已经很好 */
+}
+
+.title {
+	position: absolute;
+	left: 50%;
+	top: 5%;
+	transform: translate(-50%, -5%);
+}
+
+.title p {
+	font-size: 8rem;
+	font-weight: 800;
+	white-space: nowrap;
+	margin-top: 130px;
+	font-family: "楷体";
+}
+
+#banner {
+	margin-top: 100px;
+	overflow: hidden;
+	position: relative;
+	width: 90%;
+	height: calc(var(--post-size) / 0.72);
+  -webkit-mask: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDQwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDE0NDAgNTAwIiBpZD0iaiI+CiAgPHBhdGggZmlsbD0icmdiKDIwMCwyMDAsMjAwKSIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMCAwczI3NS4wNCAxMDAgNzIwIDEwMFMxNDQwIDAgMTQ0MCAwdjUwMHMtMjc1LjA0LTEwMC03MjAtMTAwUzAgNTAwIDAgNTAwVjB6Ii8+Cjwvc3ZnPgo=);
+          mask: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDQwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDE0NDAgNTAwIiBpZD0iaiI+CiAgPHBhdGggZmlsbD0icmdiKDIwMCwyMDAsMjAwKSIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMCAwczI3NS4wNCAxMDAgNzIwIDEwMFMxNDQwIDAgMTQ0MCAwdjUwMHMtMjc1LjA0LTEwMC03MjAtMTAwUzAgNTAwIDAgNTAwVjB6Ii8+Cjwvc3ZnPgo=);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-size: var(--mask-size);
+          mask-size: var(--mask-size);
+	position: absolute;
+	top: 10%;
+}
+
+#banner .img-wrapper {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	position: absolute;
+	width: 100%;
+	float: left;
+	height: calc(var(--post-size) / 0.72);
+	transform: translate(13.39vw, 0);
+	animation: admission 1.5s;
+}
+
+#banner .img-wrapper .img-box {
+	height: 100%;
+	display: inline-block;
+	margin-right: var(--post-spacing);
+	position: relative;
+	cursor: pointer;
+}
+#banner .img-wrapper .img-box .info {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(23, 23, 23, 0.5);
+	text-align: center;
+	color: #fff9f1;
+	font-size: 4rem;
+}
+#banner .img-wrapper .img-box img {
+	width: var(--post-size);
+	height: 100%;
+	object-position: center;
+	/* 用于设置替换元素的内容在元素容器中的位置为居中 */
+	object-fit: cover;
+	/* 则用于指定替换元素的内容如何适应其使用 width 和 height 属性定义的框 */
+	/* cover 值会使内容被缩放以保持不变 */
+}
+
+#banner .img-wrapper .img-box:last-child {
+	transform: translate(-160.68vw, 0);
+}
+
+.btn-group {
+	height: 5vh;
+	position: absolute;
+	left: 50%;
+	/* 元素相对于其包含块的左边缘和底边缘的偏移量 */
+	bottom: 0%;
+	/* 元素相对于其包含块的左边缘和底边缘的偏移量 */
+	transform: translate(-50%, -50%);
+	transition: 1s;
+	opacity: 0;
+}
+
+.btn-group .btn {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	border: 1px solid #171717;
+	background-color: #fff;
+	margin: 10px;
+	cursor: pointer;
+	transition: 0.4s;
+	box-sizing: border-box;
+}
+
+.btn-group .btn:hover {
+	transform: scale(1.2);
+	background-color: #000;
+}
+
+.btn-group .btn:hover .icon {
+	fill: #fff;
+}
+
+.btn-group .btn .icon {
+	width: 30px;
+	height: 30px;
+}
+
+.btn-group .btn .right {
+	transform: rotate(180deg);
+}
+
+.img-list {
+	left: 0;
+}
+
+@-webkit-keyframes admission {
+0% {
+    -webkit-transform: translate(140vw, 0);
+            transform: translate(140vw, 0);
+  }
+  100% {
+    -webkit-transform: translate(13.39vw, 0);
+            transform: translate(13.39vw, 0);
+  }
+}
+
+@keyframes admission {
+  0% {
+    -webkit-transform: translate(140vw, 0);
+            transform: translate(140vw, 0);
+  }
+  100% {
+    -webkit-transform: translate(13.39vw, 0);
+            transform: translate(13.39vw, 0);
+  }
+}
+/* 轮播图结束 */

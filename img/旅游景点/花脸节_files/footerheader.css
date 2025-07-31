@@ -1,0 +1,437 @@
+#perny-main {
+	min-height: calc(100vh - 72px - 286px)
+}
+
+#footer0820 .w1200 {
+	margin: 0 auto;
+	width: 1200px
+}
+
+#footer0820 {
+	margin-top: 34px;
+	padding: 64px 0 38px;
+	width: 100%;
+	background-color: #333
+}
+
+#footer0820 #perny-footer {
+	position: relative
+}
+
+#footer0820 #perny-footer .link-1,
+#footer0820 #perny-footer .link-2,
+#footer0820 #perny-footer .link-3,
+#footer0820 #perny-footer .link-4 {
+	float: left
+}
+
+#footer0820 #perny-footer .link-1 ul li,
+#footer0820 #perny-footer .link-2 ul li,
+#footer0820 #perny-footer .link-3 ul li,
+#footer0820 #perny-footer .link-4 ul li {
+	font-size: 14px;
+	line-height: 2.2;
+	color: #f1f1f1
+}
+
+#footer0820 #perny-footer .link-1 ul li a,
+#footer0820 #perny-footer .link-2 ul li a,
+#footer0820 #perny-footer .link-3 ul li a,
+#footer0820 #perny-footer .link-4 ul li a {
+	color: #f1f1f1
+}
+
+#footer0820 #perny-footer .link-1 {
+	width: 11%
+}
+
+#footer0820 #perny-footer .link-1 ul {
+	padding-left: 26px
+}
+
+#footer0820 #perny-footer .link-2 {
+	width: 17%
+}
+
+#footer0820 #perny-footer .link-2::before {
+	position: absolute;
+	left: 15%;
+	top: 0;
+	bottom: 0;
+	content: "";
+	height: 100%;
+	border-left: 1px solid #272727
+}
+
+#footer0820 #perny-footer .link-2 ul {
+	padding-left: 26px
+}
+
+#footer0820 #perny-footer .link-3 {
+	width: 45%
+}
+
+#footer0820 #perny-footer .link-3::before {
+	position: absolute;
+	left: 33%;
+	top: 0;
+	bottom: 0;
+	content: "";
+	height: 100%;
+	border-left: 1px solid #272727
+}
+
+#footer0820 #perny-footer .link-3 ul {
+	padding-left: 26px
+}
+
+#footer0820 #perny-footer .link-3 ul li {
+	font-size: 11px;
+	float: left
+}
+
+#footer0820 #perny-footer .link-3 ul li.odd {
+	width: 57%
+}
+
+#footer0820 #perny-footer .link-3 ul li.even {
+	width: 43%
+}
+
+#footer0820 #perny-footer .link-3 .other {
+	padding-top: 18px;
+	padding-left: 26px
+}
+
+#footer0820 #perny-footer .link-3 .other .cnr-logo {
+	width: 70px;
+	height: 22px;
+	float: left;
+	display: block
+}
+
+#footer0820 #perny-footer .link-3 .other .gywm {
+	float: left;
+	margin-left: 8px;
+	font-size: 12px;
+	line-height: 2;
+	color: #f1f1f1
+}
+
+#footer0820 #perny-footer .link-3 .other .gywm a {
+	color: #f1f1f1
+}
+
+#footer0820 #perny-footer .link-3 .other span {
+	float: right;
+	margin-right: 40px
+}
+
+#footer0820 #perny-footer .link-3 .other span a {
+	display: block;
+	float: left;
+	margin-left: 8px
+}
+
+#footer0820 #perny-footer .link-3 .other span img {
+	height: 26px;
+	width: auto;
+	display: block
+}
+
+#footer0820 #perny-footer .link-4 {
+	width: 22%
+}
+
+#footer0820 #perny-footer .link-4::before {
+	position: absolute;
+	left: 78%;
+	top: 0;
+	bottom: 0;
+	content: "";
+	height: 100%;
+	border-left: 1px solid #272727
+}
+
+#footer0820 #perny-footer .link-4 ul {
+	padding-left: 26px;
+	margin-bottom: -14px
+}
+
+#footer0820 #perny-footer .link-4 ul li {
+	width: 50%;
+	float: left;
+	margin-bottom: 22px;
+	height: 32px
+}
+
+#footer0820 #perny-footer .link-4 ul li a {
+	display: block
+}
+
+#footer0820 #perny-footer .link-4 ul li a img {
+	display: inline-block;
+	width: 32px;
+	height: 32px
+}
+
+#footer0820 #perny-footer .link-4 ul li a span {
+	display: inline-block;
+	font-size: 12px;
+	line-height: 16px;
+	width: 32px;
+	height: 32px;
+	text-align: center;
+	vertical-align: top
+}
+
+#footer0820 #perny-footer .link-4 ul li a span.yunting {
+	line-height: 32px
+}
+
+#topline20210826 {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 9;
+	padding-bottom: 11px;
+	background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAALCAYAAAC+jufvAAAAHklEQVQImWNgYGDgZmJgYPgHJ/7jIsCAkYmBgYEBANxQBxbHmTHQAAAAAElFTkSuQmCC) repeat-x 0 bottom;
+	margin-bottom: 9px
+}
+
+#topline20210826+.blank {
+	height: 72px
+}
+
+#topline20210826 .row {
+	width: 1200px;
+	margin: 0 auto
+}
+
+#topline20210826 .line1 {
+	border-bottom: 1px solid #dfdfdf;
+	background-color: #fff
+}
+
+#topline20210826 .line1 .cnr-logo {
+	float: left;
+	background: url(//www.cnr.cn/2021/images/logo0623.png?v=1) no-repeat center center;
+	background-size: contain;
+	width: 77px;
+	height: 24px;
+	padding: 8px 0
+}
+
+#topline20210826 .line1 .cnr-logo a {
+	display: block;
+	width: 100%;
+	height: 100%
+}
+
+#topline20210826 .line1 .cnr-logo a.m {
+	display: none
+}
+
+#topline20210826 .line1 .nav-main {
+	float: left;
+	height: 40px
+}
+
+#topline20210826 .line1 .nav-side {
+	float: right;
+	height: 40px
+}
+
+#topline20210826 .line1 .nav-side li {
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	margin-right: 15px
+}
+
+#topline20210826 .line1 .nav-side li.search {
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAA60lEQVQokYXSvUqDQRCF4UdRiKBgYZFgpUUKfwrxBmzs0ghegYX4QwrRwsZKLG3srUTBoJjO9LHSCxAVLLWxE0QNEVnYNV/4FA8sDDvnZWZntqdWnBIVghWMo4131HEso74YLmIHpzjCG8pYxxzW0ArGUGEaJ/GyqVsF1HCD3ZDpxRLOfjGLbW2hgpEEjKGRs3Z0j2fMJCCcz5ytWx8YSMArJnOWjoYxitsEhP5XMfgHsIwHPCbgAtc4x2zGWMQ29nAVd/Ozh01s4AAv8U0l3MUpVvGEywR8YR+HmMBQto04pZDvz36N/zSPhW9SVTAFh3Z6ZAAAAABJRU5ErkJggg==) no-repeat 0 center;
+	padding-left: 18px
+}
+
+#topline20210826 .line1 .nav-side li.app a.m,
+#topline20210826 .line1 .nav-side li.search a.m {
+	display: none
+}
+
+#topline20210826 .line1 .nav-side li a {
+	font-size: 12px;
+	font-weight: 700;
+	color: #aa182c
+}
+
+#topline20210826 .line1 .nav-main li {
+	position: relative;
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	margin-left: 13px
+}
+
+#topline20210826 .line1 .nav-main li:first-child {
+	margin-left: 14px
+}
+
+#topline20210826 .line1 .nav-main li.gengduo>a {
+	display: block;
+	background: #efefef url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAYAAAB4ka1VAAAAXUlEQVQImW3MvQmDUBiF4UdxAVeLfWqxtnGE2zmBQ7hDmiyQxtJCJ0iwCh/cQsQDB144P0VKacTTvfoSAxbUF8+YovDFA/vp5I02IAqhFQ0ObJl/EVSn1QsdPnkA/kI4EKSH12/+AAAAAElFTkSuQmCC) no-repeat 36px center;
+	color: #606060;
+	height: 22px;
+	line-height: 22px;
+	margin: 9px 0;
+	padding: 0 16px 0 8px;
+	border-radius: 11px
+}
+
+#topline20210826 .line1 .nav-main li.gengduo .sub {
+	left: 2px
+}
+
+#topline20210826 .line1 .nav-main li:hover .sub {
+	visibility: visible;
+	opacity: 1
+}
+
+#topline20210826 .line1 .nav-main li a {
+	font-size: 12px;
+	font-weight: 700
+}
+
+#topline20210826 .line1 .nav-main li a:hover {
+	color: #aa182c;
+	text-decoration: none
+}
+
+#topline20210826 .line1 .nav-main li .sub {
+	visibility: hidden;
+	opacity: 0;
+	transition: all ease-in-out .4s;
+	position: absolute;
+	top: 46px;
+	left: -10px;
+	max-width: 125px;
+	padding: 0 10px;
+	border: 1px solid #dfdfdf;
+  border-radius:5px;
+	background: #fff;
+	font-size: 0;
+	z-index: 9
+}
+
+#topline20210826 .line1 .nav-main li .sub .top {
+	position: absolute;
+  left: 11px;
+  top: -7px;
+  background: url(//www.cnr.cn/2021/images/triangle.png) no-repeat center;
+  width: 14px;
+  height: 8px
+}
+
+#topline20210826 .line1 .nav-main li .sub a {
+	display: block;
+	font-size: 14px;
+	line-height: 24px;
+	height: 24px;
+	font-weight: 400;
+	float: left;
+	margin: 0 3px;
+	white-space: nowrap
+}
+
+#topline20210826 .line1 .nav-main li .sub .bottom {
+	position: absolute;
+	left: -1px;
+	bottom: -8px;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJMAAAAIBAMAAAAPatCmAAAALVBMVEUAAADf39/f39/f39/f39/f39/f39/f39/f39/p6enw8PD39/f9/f3+/v7////M9/VXAAAACHRSTlMAG1WWvvLz9B6Xyw0AAABCSURBVCjPY+h7RyXQwEBFo2KoZNKbBAZvKhn12oFBk0pGvVRgYF5HHaMWMzAwWu6lgkFvdxoyMDAwuXdQDtqdGBgAk6D6jLr62koAAAAASUVORK5CYII=) no-repeat center;
+	width: 147px;
+	height: 8px
+}
+
+#topline20210826 .line2 {
+	height: 30px;
+	border-bottom: 1px solid #dfdfdf;
+	background-color: #fff
+}
+
+#topline20210826 .line2 .nav-local li {
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	margin-left: 21px
+}
+
+#topline20210826 .line2 .nav-local li:first-child {
+	margin-left: 12px
+}
+
+#topline20210826 .line2 .nav-local li a {
+	font-size: 12px;
+	line-height: 24px;
+	height: 24px
+}
+
+
+
+
+
+
+
+#topline20210826 .line1 .nav-main li.gengduo .sub02 {
+  left: 2px
+}
+
+#topline20210826 .line1 .nav-main li:hover .sub02 {
+  visibility: visible;
+  opacity: 1
+}
+
+#topline20210826 .line1 .nav-main li .sub02 {
+  visibility: hidden;
+  opacity: 0;
+  transition: all ease-in-out .4s;
+  position: absolute;
+  top: 46px;
+  left: -10px;
+  width: 64px;
+  padding: 0 10px;
+  border-right: 1px solid #dfdfdf;
+  border-left: 1px solid #dfdfdf;
+  background: #fff;
+  font-size: 0;
+  z-index: 9
+}
+
+#topline20210826 .line1 .nav-main li .sub02 .top02 {
+  position: absolute;
+  left: -1px;
+  top: -13px;
+  background: url(//www.cnr.cn/2021/images/menu-sub-top0520.png) no-repeat center;
+  width: 86px;
+  height: 13px
+}
+
+#topline20210826 .line1 .nav-main li .sub02 a {
+  display: block;
+  font-size: 14px;
+  line-height: 24px;
+  height: 24px;
+  font-weight: 400;
+  float: left;
+  margin: 0 3px;
+  white-space: nowrap
+}
+
+#topline20210826 .line1 .nav-main li .sub02 .bottom02 {
+  position: absolute;
+  left: -1px;
+  bottom: -8px;
+  background: url(//www.cnr.cn/2021/images/menu-sub-bottom0520.png) no-repeat center;
+  width: 86px;
+  height: 8px
+}

@@ -1,0 +1,103 @@
+/* 自然资源标题 */
+.nat_title {
+	width: 550px;
+	/* 标题盒子宽 */
+	height: 100px;
+	/* 标题盒子宽 */
+	margin-left: 30%;
+	/*标题盒子 距离左边位置*/
+	font-size: 60px;
+	/* 盒子内字体大小 */
+	padding-top: 15px;
+	/* 盒子内边距 */
+}
+/* 社会资源标题 */
+.nat_title1 {
+	width: 550px;
+	/* 标题盒子宽 */
+	height: 100px;
+	/* 标题盒子宽 */
+	margin-left: 45%;
+	/*标题盒子 距离左边位置*/
+	font-size: 60px;
+	/* 盒子内字体大小 */
+	padding-top: 15px;
+	/* 盒子内边距 */
+}
+
+.nat_div {
+	width: 90%;
+	height: 100%;
+	margin-left: 5%;
+	font-size: 25px;
+}
+
+.nat_div p {
+	margin-bottom: 20px;
+}
+
+.nat_p {
+	font-size: 30px;
+	font-weight: bold;
+	/* 加粗 */
+	display: inline;
+	/* p标签不换行 */
+}
+
+/* 多张图片放大 */
+.images img {
+	/* border: #fff solid 10px; */
+	max-width: 50vh;
+	max-height: 50vh;
+	transition: .5s;
+	cursor: pointer;
+	/* 鼠标变为点击样式 */
+}
+
+.images:hover img {
+	box-shadow: 0 10px 30px #86c4f7;
+	transform: scale(1.05);
+}
+
+/* 图片容器样式 */
+.images {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 30vh;
+	transform-origin: 50% 50%;
+	transition: 1s;
+}
+
+/* 点击后的放大弹窗样式 */
+.modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.8);
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+
+.modal img {
+	max-width: 90%;
+	max-height: 90%;
+}
+
+.modal.active {
+	display: flex;
+}
+
+/* 表格水平居中 */
+.center-text {
+  text-align: center; /* 水平居中 */
+}
+.center-text td, th {
+  vertical-align: middle; /* 设置文字垂直居中 */
+  border: 1px solid #ddd; /* 为了更好的可视化效果，添加边框 */
+  height: 50px;
+}

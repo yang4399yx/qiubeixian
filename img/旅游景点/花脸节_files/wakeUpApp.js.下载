@@ -1,0 +1,94 @@
+;
+(function ($, win, doc) {
+    $.extend({
+        wakeUpApp: function (options) {
+          var isApp=false;
+          try{window.android.checkInApp('');isApp = true;}catch(err){}
+          try{window.webkit.messageHandlers.sendInAppToH5.postMessage('');isApp = true;}catch(err){}
+          try{newsDetail.isHarmony();isApp=true}catch(err){}
+          if(isApp){
+            return;
+          }
+          var ua = window.navigator.userAgent
+          var isIOS = /iphone|ipad|ipod/i.test(ua)
+          var isAndroid = /android/i.test(ua)
+          var isWeixin = /MicroMessenger/i.test(ua)
+          var isOpenHarmony = /OpenHarmony|ArkWeb/i.test(ua)
+
+          var html = '<div class="toApp">'+
+                        '<a class="load">'+
+                          '<img src="//apicnrapp.cnr.cn/img/logo.png" alt="">'+
+                          '<h6>央广网</h6>'+
+                          '<p>讲好中国故事 传播中国声音</p>'+
+                          '<span><img src="//apicnrapp.cnr.cn/img/open.png" alt=""></span>'+
+                        '</a>'+
+                        '<div class="blank"></div>';
+                      '</div>';
+          
+          var $dom = $(html);
+          var docpuburl = encodeURI(document.location.origin + doc.location.pathname)
+
+          if (isAndroid) {
+            if (isWeixin) {
+              var extinfo = JSON.stringify({type: '28', id: '', uri: '', docpubUrl: docpuburl, h5Url: docpuburl})
+              $dom = $('<wx-open-launch-app id="launch-btn" appid="wxc84dd584bd505f45" extinfo="'+ extinfo +'">'+
+                        '<script type="text/wxtag-template">'+
+                          '<style>.btn { padding: 12px }</style>'+
+                          '<button class="btn">App内查看</button>'+
+                        '</script>' +
+'                     </wx-open-launch-app>')
+            } else {
+              loadScript('https://by2j.t4m.cn/applink.js', function(){
+                MobLink([
+                  {
+                      el: '.toApp',
+                      path: 'demo/b',
+                      params: {
+                          type: '28', // 28是pc页面除了眼见和耳闻
+                          id: '',
+                          uri: '',
+                          docpubUrl: docpuburl
+                      }
+                  }
+                ]);
+              })
+            }
+          } else
+          if (isIOS) {
+            $dom.find('.load').attr('href', "https://www.radio.cn/qq_conn/1104899269?type=28&id=&uri=&docpubUrl="+ docpuburl)
+          } else
+          if (isOpenHarmony) {
+            window.open("store://appgallery.huawei.com/app/detail?id=cn.cnr.cnrnetohos")
+          }
+
+          
+
+          $('.wrapper').prepend($dom)
+          return this
+        }
+    });
+
+
+    function loadScript(url, callback) {  
+      var script = doc.createElement("script");  
+      script.type = "text/javascript";  
+      if(typeof(callback) != "undefined"){  
+          if (script.readyState) {  
+              script.onreadystatechange = function () {  
+                  if (script.readyState == "loaded" || script.readyState == "complete") {  
+                      script.onreadystatechange = null;  
+                      callback();  
+                  }  
+              };  
+          } else {  
+              script.onload = function () {  
+                  callback();  
+              };  
+          }  
+      }  
+      script.src = url;  
+      doc.body.appendChild(script);  
+    } 
+
+
+})(jQuery || window.jQuery, window, document);
